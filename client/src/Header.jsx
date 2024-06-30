@@ -3,6 +3,9 @@ import { Link } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import {logout} from './redux/user/slice.js'
 import { useDispatch } from 'react-redux';
+// import DarkMode from './components/DarkMode/DarkMode';
+// import './components/DarkMode/DarkMode.css';
+
 
 function Header(props) {
   const { currentUser } = useSelector((state) => state.user);
@@ -25,6 +28,8 @@ function Header(props) {
     <header className="flex justify-between items-center">
       <Link className ="font-bold text-2xl" to={'/'}>MY BLOG</Link>
       <nav className="flex">
+      
+  
       {!currentUser? (
         <div className='flex gap-4'>
         <Link className='text-gray-500 hover:underline hover:font-semibold' to={'/login'}>Login</Link>
