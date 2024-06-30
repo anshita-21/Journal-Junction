@@ -3,10 +3,10 @@
 /* Container for the toggle switch */
 .toggle-switch {
     position: relative;
-    width: 50px;
+    width: 60px;
+    height: 34px;
     display: inline-block;
-    text-align: left;
-    top: 3px;
+    vertical-align: middle;
   }
   
   /* Hide the actual checkbox input */
@@ -19,17 +19,18 @@
     display: block;
     overflow: hidden;
     cursor: pointer;
-    border: 2px solid #999999;
-    border-radius: 20px;
-    margin: 0;
+    border: 2px solid #ccc;
+    border-radius: 34px;
+    background-color: var(--bg-color, #e0e0e0);
+    transition: background-color 0.3s ease;
   }
   
   /* Inner content (Light/Dark labels) */
   .toggle-switch-inner {
     display: block;
     width: 200%;
-    margin-left: -100%;
-    transition: margin 0.3s ease-in 0s;
+    height: 100%;
+    transition: margin 0.3s ease-in-out;
   }
   
   .toggle-switch-inner:before,
@@ -37,45 +38,44 @@
     display: block;
     float: left;
     width: 50%;
-    height: 22px;
-    padding: 0;
-    line-height: 22px;
-    font-size: 14px;
-    color: white;
-    font-weight: bold;
+    height: 100%;
     box-sizing: border-box;
+    line-height: 34px;
+    text-align: center;
+    font-size: 12px;
+    font-weight: bold;
+    text-transform: uppercase;
   }
   
   /* Light label */
   .toggle-switch-inner:before {
-    content: 'Light';
-    padding-left: 10px;
-    background-color: var(--light-bg-color, #ffffff);
-    color: var(--light-text-color, black);
+    content: 'Switch';
+    color: var(--light-text-color, #000);
+    background-color: var(--light-bg-color, #fff);
   }
   
   /* Dark label */
   .toggle-switch-inner:after {
-    content: 'Dark';
-    padding-right: 10px;
-    background-color: var(--dark-bg-color, #121212);
-    color: var(--dark-text-color, white);
-    text-align: right;
+    content: 'Switch';
+    color: var(--dark-text-color, #fff);
+    background-color: var(--dark-bg-color, #333);
   }
   
   /* The switch itself */
   .toggle-switch-switch {
     display: block;
-    width: 18px;
-    margin: 2px;
-    background: var(--switch-bg-color, #ffffff);
+    width: 28px;
+    height: 28px;
+    margin: 3px;
+    background: var(--switch-bg-color, #fff);
     position: absolute;
-    top: 0;
-    bottom: 0;
-    right: var(--switch-position, 28px);
-    border: 2px solid #999999;
-    border-radius: 20px;
-    transition: margin 0.3s ease-in 0s;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 30px;
+    border: 2px solid #ccc;
+    border-radius: 50%;
+    transition: all 0.3s ease-in-out;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
   }
   
   /* When the checkbox is checked, adjust the inner content and switch position */
@@ -84,6 +84,16 @@
   }
   
   .toggle-switch-checkbox:checked + .toggle-switch-label .toggle-switch-switch {
-    right: 0;
+    right: 2px;
+  }
+  
+  /* Hover and active states */
+  .toggle-switch-label:hover {
+    background-color: var(--hover-bg-color, #d0d0d0);
+  }
+  
+  .toggle-switch-label:active .toggle-switch-switch {
+    width: 30px;
+    height: 30px;
   }
   

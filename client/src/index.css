@@ -1,34 +1,72 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
 /* src/index.css */
+
+/* Light mode styles */
 body.light {
-    background-color: white;
-    color: black;
-  }
-  
-  body.dark {
-    background-color: #121212;
-    color: white;
-  }
-  
-  /* Example for other elements */
-  .header.light {
-    background-color: white;
-    color: black;
-  }
-  
-  .header.dark {
-    background-color: #121212;
-    color: white;
-  }
-  
-  /* Tailwind CSS Example */
-  .light .header {
-    @apply bg-white text-black;
-  }
-  
-  .dark .header {
-    @apply bg-gray-900 text-white;
-  }
-  
+  @apply bg-white text-black;
+}
+
+.header.light {
+  @apply bg-white text-black;
+}
+
+.navbar.light {
+  @apply bg-gray-100 text-gray-900;
+}
+
+.footer.light {
+  @apply bg-gray-200 text-gray-800;
+}
+
+.button.light {
+  @apply bg-blue-500 text-white hover:bg-blue-600;
+}
+
+/* Dark mode styles */
+body.dark {
+  @apply bg-gray-900 text-white;
+}
+
+.header.dark {
+  @apply bg-gray-900 text-white;
+}
+
+.navbar.dark {
+  @apply bg-gray-800 text-gray-200;
+}
+
+.footer.dark {
+  @apply bg-gray-700 text-gray-300;
+}
+
+.button.dark {
+  @apply bg-purple-500 text-white hover:bg-purple-600;
+}
+
+/* Example for using more colors in different elements */
+.card.light {
+  @apply bg-white text-black border border-gray-300;
+}
+
+.card.dark {
+  @apply bg-gray-800 text-white border border-gray-600;
+}
+
+.alert.light {
+  @apply bg-red-100 text-red-800 border border-red-200;
+}
+
+.alert.dark {
+  @apply bg-red-900 text-red-200 border border-red-800;
+}
+
+.input.light {
+  @apply bg-white text-black border border-gray-300;
+}
+
+.input.dark {
+  @apply bg-gray-700 text-gray-300 border border-gray-600;
+}
