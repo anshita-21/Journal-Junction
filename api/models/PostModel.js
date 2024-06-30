@@ -8,18 +8,18 @@ const PostSchema = new mongoose.Schema({
     },
     summary :{
         type:String,
-        required:true
+        required:false
     },
     content:{
         type:String,
-        required:true
+        required:false
     },
     imageUrl:{
         type:String
     },
     username:{
         type:String,
-        required:true
+        required:false
     }
 },{timestamps:true});
 
