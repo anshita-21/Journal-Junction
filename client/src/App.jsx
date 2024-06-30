@@ -48,7 +48,7 @@ import HomePage from "./pages/HomePage.jsx";
 import LoginPage from "./pages/LoginPage.jsx";
 import RegisterPage from "./pages/RegisterPage.jsx";
 import PrivateRoute from "./components/PrivateRoute.jsx";
-import FullPost from "./pages/FullPost.jsx";
+import fullPost from "./pages/FullPost.jsx";
 import EditPost from "./pages/EditPost.jsx";
 
 function App() {
