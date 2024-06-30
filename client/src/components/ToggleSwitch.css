@@ -1,0 +1,89 @@
+/* src/components/ToggleSwitch.css */
+
+/* Container for the toggle switch */
+.toggle-switch {
+    position: relative;
+    width: 50px;
+    display: inline-block;
+    text-align: left;
+    top: 3px;
+  }
+  
+  /* Hide the actual checkbox input */
+  .toggle-switch-checkbox {
+    display: none;
+  }
+  
+  /* Label for the toggle switch */
+  .toggle-switch-label {
+    display: block;
+    overflow: hidden;
+    cursor: pointer;
+    border: 2px solid #999999;
+    border-radius: 20px;
+    margin: 0;
+  }
+  
+  /* Inner content (Light/Dark labels) */
+  .toggle-switch-inner {
+    display: block;
+    width: 200%;
+    margin-left: -100%;
+    transition: margin 0.3s ease-in 0s;
+  }
+  
+  .toggle-switch-inner:before,
+  .toggle-switch-inner:after {
+    display: block;
+    float: left;
+    width: 50%;
+    height: 22px;
+    padding: 0;
+    line-height: 22px;
+    font-size: 14px;
+    color: white;
+    font-weight: bold;
+    box-sizing: border-box;
+  }
+  
+  /* Light label */
+  .toggle-switch-inner:before {
+    content: 'Light';
+    padding-left: 10px;
+    background-color: var(--light-bg-color, #ffffff);
+    color: var(--light-text-color, black);
+  }
+  
+  /* Dark label */
+  .toggle-switch-inner:after {
+    content: 'Dark';
+    padding-right: 10px;
+    background-color: var(--dark-bg-color, #121212);
+    color: var(--dark-text-color, white);
+    text-align: right;
+  }
+  
+  /* The switch itself */
+  .toggle-switch-switch {
+    display: block;
+    width: 18px;
+    margin: 2px;
+    background: var(--switch-bg-color, #ffffff);
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: var(--switch-position, 28px);
+    border: 2px solid #999999;
+    border-radius: 20px;
+    transition: margin 0.3s ease-in 0s;
+  }
+  
+  /* When the checkbox is checked, adjust the inner content and switch position */
+  .toggle-switch-checkbox:checked + .toggle-switch-label .toggle-switch-inner {
+    margin-left: 0;
+  }
+  
+  .toggle-switch-checkbox:checked + .toggle-switch-label .toggle-switch-switch {
+    right: 0;
+  }
+  
