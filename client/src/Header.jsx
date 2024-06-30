@@ -132,7 +132,7 @@ function Header(props) {
   return (
     <header className={`flex justify-between items-center p-4 ${theme === 'dark' ? 'bg-gray-900 text-white' : 'bg-white text-black'}`}>
       <Link className="font-bold text-2xl" to={'/'}>
-        MY BLOG
+        Journal Junction
       </Link>
       <nav className="flex items-center gap-4">
         {!currentUser ? (
@@ -147,7 +147,7 @@ function Header(props) {
         ) : (
           <div className="flex gap-4">
             <Link className="hover:underline hover:font-semibold" to={'/create'}>
-              Create a new post
+              Create new post
             </Link>
             <span className="hover:underline cursor-pointer hover:font-semibold" onClick={handleLogout}>
               Logout
