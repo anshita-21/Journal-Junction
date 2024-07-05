@@ -23,7 +23,7 @@ export default defineConfig({
     proxy: {
       '/api': {
         //target: 'http://localhost:3000',
-        target: 'https://journal-junction-1.onrender.com',
+        target: 'https://journal-junction-b.onrender.com',
         changeOrigin: true,
       },
     },
