@@ -7,20 +7,37 @@ function HomePage(props) {
     console.log(posts);
 
 
-    useEffect(()=>{
-        async function getPosts(params) {
-            try {
-                const res = await fetch('/api/user/allposts');
-                const data = await res.json();
-                setPosts(data);
-            } catch (error) {
-                console.log(error);
-            }    
-        }
+    // useEffect(()=>{
+    //     async function getPosts(params) {
+    //         try {
+    //             const res = await fetch('/api/user/allposts');
+    //             const data = await res.json();
+    //             setPosts(data);
+    //         } catch (error) {
+    //             console.log(error);
+    //         }    
+    //     }
 
-        getPosts();
+    //     getPosts();
         
-    },[])
+    // },[])
+     useEffect(() => {
+        const fetchPosts = async () => {
+          try {
+            const response = await fetch(`/api/user/allposts?_=${new Date().getTime()}`);
+            if (!response.ok) {
+              const text = await response.text();
+              throw new Error(`HTTP error! Status: ${response.status} - ${text}`);
+            }
+            const data = await response.json();
+            setPosts(data);
+          } catch (error) {
+            console.error('Error fetching posts:', error);
+            setError(error);
+          }
+        };
+        fetchPosts();
+      }, []);
 
 
     return (
